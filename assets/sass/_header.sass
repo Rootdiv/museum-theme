@@ -1,0 +1,133 @@
+body
+  overflow-x: hidden
+.header
+  padding-top: 10px
+  padding-bottom: 10px
+  color: #C02223
+  position: relative
+  &::after
+    position: absolute
+    content: ''
+    bottom: 0px
+    left: 50%
+    transform: translateX(-50%)
+    max-width: 1200px
+    width: 100%
+    height: 1px
+    background: #C02223
+  &-wrapper
+    display: flex
+    align-items: center
+    justify-content: space-between
+    a
+      text-decoration: none
+  &-menu
+    margin: 0
+    margin-top: 40px
+    padding: 0
+    list-style: none
+    display: flex
+    align-items: center
+    &-toggle
+      display: none
+.custom
+  &-logo
+    width: 50px
+.logo
+  display: flex
+  align-items: center
+  &-name
+    color: #C02223
+    font-family: 'Roboto', serif-serif
+    font-size: 24px
+    margin-left: 10px
+    span
+      font-size: 12px
+    h3
+      margin: 0
+      padding: 0
+      line-height: 1
+.menu
+  &-item
+    position: relative
+    font-size: 15px
+    font-weight: 500
+    &:not(:last-child)
+      margin-right: 30px
+    &:hover
+      .sub-menu
+        display: block
+    a
+      text-decoration: none
+      color: #C02223
+.sub-menu
+  position: absolute
+  background-color: #ffffff
+  z-index: 5
+  width: 500px
+  margin: 0
+  padding: 0
+  padding-top: 20px
+  list-style: none
+  display: none
+  &::before
+    position: absolute
+    content: ''
+    top: 0
+    left: -1500px
+    width: 136vw
+    height: 230px
+    background: #FFFFFF
+  li
+    margin-bottom: 15px
+
+@media screen and (max-width: 1200px)
+  .header
+    &-wrapper
+      flex-wrap: wrap
+    &-nav
+      order: 5
+      padding-top: 20px
+    &-menu
+      flex-wrap: wrap
+  .menu
+    &-item
+      a
+        margin-left: 0
+        margin-right: 30px
+@media screen and (max-width: 768px)
+  .header
+    &-wrapper
+      position: relative
+    &-nav
+      display: none
+      position: absolute
+      right: 0
+      top: 55px
+      width: calc(40% + 40px)
+      background-color: #ffffff
+      padding: 30px
+      z-index: 99
+      border-radius: 10px
+      box-shadow: 1px 1px 10px rgba(#262D33, 0.2)
+    &-menu
+      flex-direction: column
+      align-items: flex-start
+      a
+        color: #000
+      &-toggle
+        display: flex
+        width: 30px
+        height: 20px
+        align-items: center
+        justify-content: space-between
+        flex-direction: column
+        margin-left: 10px
+        span
+          width: 100%
+          height: 1px
+          background-color: #ffffff
+    .menu
+      &-item
+        &:not(:last-child)
+          margin-bottom: 15px
