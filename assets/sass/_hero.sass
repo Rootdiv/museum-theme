@@ -1,0 +1,70 @@
+.hero
+  padding-top: 30px
+  margin: 0 auto
+  max-width: 1200px
+  &-slider
+    overflow: inherit
+  .swiper-slide
+    opacity: 0.3
+    .article
+      &-permalink, &-btn
+        display: none
+  .swiper-slide-active
+    opacity: 1
+    .article
+      &-permalink, &-btn
+        display: flex
+  .article
+    &-post
+      font-weight: 500
+      position: relative
+    &-permalink, &-btn
+      position: absolute
+      top: 32%
+      left: 0
+      width: 700px
+      color: #ffffff
+      text-decoration: none
+      padding: 0
+      margin: 0
+      margin-left: 30px
+      h1, p
+        margin: 0
+      h1
+        font-size: 46px
+        line-height: 146%
+    &-btn
+      top: 62%
+      background: rgba(192, 34, 35, 0.5)
+      border: 1px solid #C02223
+      width: 270px
+      height: 60px
+      font-size: 16px
+      text-transform: uppercase
+      align-items: center
+      justify-content: center
+      &:hover
+        background: #C02223
+  .swiper-button
+    &-arr
+      color: #ffffff
+      position: absolute
+      right: 90px
+      bottom: 40px
+      height: 16px
+      z-index: 1
+      display: flex
+      align-items: center
+      justify-content: center
+    &-next
+      background: url(../images/arrow-left.svg) no-repeat
+      right: 50px
+    &-prev
+      background: url(../images/arrow-right.svg) no-repeat
+      left: 50px
+    &-next, &-prev
+      background-position-y: 50%
+      width: inherit
+      &::after
+        content: ''
+        width: 42px

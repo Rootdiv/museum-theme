@@ -42,7 +42,7 @@
               'theme_location'  => 'header_menu',
               'container'       => 'nav', 
               'container_class' => 'header-nav', 
-              'menu_class'      => 'header-menu', 
+              'menu_class'      => 'hamburger header-menu', 
               'echo'            => true,
             ] );
           ?>

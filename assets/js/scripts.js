@@ -15,19 +15,31 @@ function backToTop() {
   }
 }
 
-var mySwiper = new Swiper('.swiper-container', {
+var mySwiper = new Swiper('.hero-slider', {
   // Optional parameters
+  speed: 700,
+  spaceBetween: 30,
   loop: true,
 
-  autoplay: {
-    delay: 5000,
-  },
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
+  navigation: {
+    prevEl: '.swiper-button-next',
+    nextEl: '.swiper-button-prev',
   },
 })
+
+const allNum = document.querySelectorAll('.article-post').length - 2;
+let slideNumArea = document.querySelector('.swiper-num-area');
+let slideNum = document.querySelector('.swiper-slide-active');
+slideNumArea.innerHTML = slideNum.getAttribute('data-num') + ' / ' + allNum;
+
+mySwiper.on('slideChange', function () {
+  setTimeout(function () {
+    let slideNumArea = document.querySelector('.swiper-num-area');
+    let slideNum = document.querySelector('.swiper-slide-active');
+    slideNumArea.innerHTML = slideNum.getAttribute('data-num') + ' / ' + allNum;
+  }, 10);
+});
+
 
 let menuToggle = $('.header-menu-toggle');
 menuToggle.on('click', function (event) {

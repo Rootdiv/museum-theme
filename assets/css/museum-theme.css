@@ -51,7 +51,6 @@
 
 body {
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 .header {
@@ -114,6 +113,7 @@ body {
 
 .logo-name span {
   font-size: 12px;
+  letter-spacing: 0.03em;
   padding-bottom: 5px;
 }
 
@@ -502,4 +502,104 @@ body {
   .footer-social {
     margin-top: 10px;
   }
+}
+
+.hero {
+  padding-top: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.hero-slider {
+  overflow: inherit;
+}
+
+.hero .swiper-slide {
+  opacity: 0.3;
+}
+
+.hero .swiper-slide .article-permalink, .hero .swiper-slide .article-btn {
+  display: none;
+}
+
+.hero .swiper-slide-active {
+  opacity: 1;
+}
+
+.hero .swiper-slide-active .article-permalink, .hero .swiper-slide-active .article-btn {
+  display: flex;
+}
+
+.hero .article-post {
+  font-weight: 500;
+  position: relative;
+}
+
+.hero .article-permalink, .hero .article-btn {
+  position: absolute;
+  top: 32%;
+  left: 0;
+  width: 700px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 30px;
+}
+
+.hero .article-permalink h1, .hero .article-permalink p, .hero .article-btn h1, .hero .article-btn p {
+  margin: 0;
+}
+
+.hero .article-permalink h1, .hero .article-btn h1 {
+  font-size: 46px;
+  line-height: 146%;
+}
+
+.hero .article-btn {
+  top: 62%;
+  background: rgba(192, 34, 35, 0.5);
+  border: 1px solid #C02223;
+  width: 270px;
+  height: 60px;
+  font-size: 16px;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .article-btn:hover {
+  background: #C02223;
+}
+
+.hero .swiper-button-arr {
+  color: #ffffff;
+  position: absolute;
+  right: 90px;
+  bottom: 40px;
+  height: 16px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .swiper-button-next {
+  background: url(../images/arrow-left.svg) no-repeat;
+  right: 50px;
+}
+
+.hero .swiper-button-prev {
+  background: url(../images/arrow-right.svg) no-repeat;
+  left: 50px;
+}
+
+.hero .swiper-button-next, .hero .swiper-button-prev {
+  background-position-y: 50%;
+  width: inherit;
+}
+
+.hero .swiper-button-next::after, .hero .swiper-button-prev::after {
+  content: '';
+  width: 42px;
 }
