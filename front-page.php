@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <main>
       <div class="container">
-        <div class="hero">
+        <section class="hero">
           <!-- Slider main container -->
           <div class="swiper-container hero-slider">
             <!-- Additional required wrapper -->
@@ -43,7 +43,7 @@
               <div class="swiper-button-next"></div>
             </div>
           </div>
-        </div>
+        </section>
         <!-- /.hero -->
       </div>
     </main>
