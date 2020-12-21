@@ -17,7 +17,7 @@ if ( ! function_exists( 'museum_theme_setup' ) ) :
       'width'       => 250,
       'flex-height' => true,
       'header-text' => 'museum',
-      'unlink-homepage-logo' => true, // WP 5.5
+      'unlink-homepage-logo' => true // WP 5.5
     ] );
 
     //Регистрация меню
@@ -45,7 +45,7 @@ function museum_theme_widgets_init() {
       'before_widget' => '<section id="%1$s" class="footer-menu %2$s">',
       'after_widget'  => '</section>',
       'before_title'  => '<h2 class="footer-menu-title">',
-      'after_title'   => '</h2>',
+      'after_title'   => '</h2>'
     )
   );
 
@@ -57,7 +57,7 @@ function museum_theme_widgets_init() {
       'before_widget' => '<section id="%1$s" class="footer-text %2$s">',
       'after_widget'  => '</section>',
       'before_title'  => '',
-      'after_title'   => '',
+      'after_title'   => ''
     )
   );
 
@@ -69,7 +69,7 @@ function museum_theme_widgets_init() {
       'before_widget' => '<section id="%1$s" class="widget %2$s">',
       'after_widget'  => '</section>',
       'before_title'  => '<h2 class="widget-title">',
-      'after_title'   => '</h2>',
+      'after_title'   => '</h2>'
     )
   );
 }
@@ -126,7 +126,7 @@ class WorkTime_Widget extends WP_Widget {
   function form( $instance ) {
     $title = @ $instance['title'] ?: __('Schedule', 'museum');
     $description = @ $instance['weekdays'] ?: __('Weekdays', 'museum');
-    $link = @ $instance['weekend'] ?: __('Weekend', 'museum');;
+    $link = @ $instance['weekend'] ?: __('Weekend', 'museum');
 
     ?>
     <p>
@@ -206,7 +206,7 @@ class Social_Widget extends WP_Widget {
     parent::__construct(
       'social_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: foo_widget
       __('Social networks', 'museum'),
-      array( 'description' => __('Links to social networks.', 'museum'), 'classname' => 'widget-social', )
+      array( 'description' => __('Links to social networks.', 'museum'), 'classname' => 'widget-social' )
     );
 
     // скрипты/стили виджета, только если он активен
@@ -376,7 +376,7 @@ class Phones_Widget extends WP_Widget {
   parent::__construct(
     'phones_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: foo_widget
     __('Phones', 'museum'),
-    array( 'description' => __('Phones.', 'museum'), 'classname' => 'widget-phones-wrapper', )
+    array( 'description' => __('Phones.', 'museum'), 'classname' => 'widget-phones-wrapper' )
   );
 
   // скрипты/стили виджета, только если он активен
@@ -519,7 +519,7 @@ function ajax_form() {
   $contact_name = $_POST['contact_name'];
   $contact_email = $_POST['contact_email'];
   $contact_comment = $_POST['contact_comment'];
-  $message = 'Пользователь отправил сообщение с сайта Museum-dev:<br>Имя '.$contact_name.'<br>E-mail '.$contact_email.'<br>Сообщение '.$contact_comment;
+  $message = 'Пользователь отправил сообщение с сайта Museum-dev:'.PHP_EOL.'Имя '.$contact_name.PHP_EOL.'E-mail '.$contact_email.PHP_EOL.'Сообщение '.$contact_comment;
   $headers = 'From: Владимир <camahor9152@gmail.com>' . "\r\n";
   $send_message = wp_mail('camahor9152@gmail.com', 'Новая сообщение с сайта', $message, $headers);
   if($send_message) echo 'Всё получилось';
@@ -547,7 +547,7 @@ function delete_intermediate_image_sizes( $sizes ){
     'medium_large',
     'large',
     '1536x1536',
-    '2048x2048',
+    '2048x2048'
   ] );
 }
 

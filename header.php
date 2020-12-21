@@ -16,7 +16,7 @@
               $logo_img = wp_get_attachment_image( $custom_logo_id, 'full', false, array(
                 'class'    => 'custom-logo',
                 'alt'      => get_bloginfo('name'),
-                'itemprop' => 'logo',
+                'itemprop' => 'logo'
               ) );
             }
             if(!is_front_page()) $home =  ' href="'.home_url('/').'"'; else $home = '';
@@ -42,8 +42,8 @@
               'theme_location'  => 'header_menu',
               'container'       => 'nav', 
               'container_class' => 'header-nav', 
-              'menu_class'      => 'hamburger header-menu', 
-              'echo'            => true,
+              'menu_class'      => 'header-menu', 
+              'echo'            => true
             ] );
           ?>
           <a href="#" class="header-menu-toggle">
