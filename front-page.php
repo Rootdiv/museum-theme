@@ -46,16 +46,16 @@
           </div>
         </section>
         <!-- /.hero -->
-        <section class="afisha">
+        <section class="poster">
           <?php foreach (get_the_category() as $category) {
               echo '<h1>'.esc_html($category->name).'</h1>';
           }?>
-          <div class="afisha-tabs">
+          <div class="poster-tabs">
               <div>Текущие</div>
               <div>Будущие</div>
               <div>Предыдущие</div>
             </div>
-          <div class="afisha-posts">
+          <div class="poster-posts">
             <?php
             global $post;
 
@@ -68,15 +68,15 @@
             if ($myposts) {
               foreach ($myposts as $post) {
                 setup_postdata($post);?>
-            <div class="afisha-posts-content">
-              <a href="<?=get_the_permalink()?>" class="afisha-posts-permalink">
+            <div class="poster-posts-content">
+              <a href="<?=get_the_permalink()?>" class="poster-posts-permalink">
                 <img src="<?php if( has_post_thumbnail() ) the_post_thumbnail_url();
                   else echo get_template_directory_uri().'/assets/images/img-default.png';
-                ?>" alt="<?php the_title()?>" class="afisha-posts-thumb" />
+                ?>" alt="<?php the_title()?>" class="poster-posts-thumb" />
               </a>
-              <div class="afisha-posts-excerpt"><?php the_excerpt()?></div>
-              <a href="<?=get_permalink()?>" class="afisha-posts-permalink">
-                <h4 class="afisha-posts-title"><?php the_title()?></h4>
+              <div class="poster-posts-excerpt"><?php the_excerpt()?></div>
+              <a href="<?=get_permalink()?>" class="poster-posts-permalink">
+                <h4 class="poster-posts-title"><?php the_title()?></h4>
               </a>
             </div>
             <?php }
@@ -84,16 +84,16 @@
             wp_reset_postdata(); // Сбрасываем $post
             ?>
           </div>
-          <!-- /.afisha-posts -->
+          <!-- /.poster-posts -->
           <?php foreach (get_the_category() as $category) {
             printf(
-              '<a href="%s" class="afisha-link">Вся %s</a>',
+              '<a href="%s" class="poster-link">Вся %s</a>',
               esc_url(get_category_link($category)),
               esc_html($category->name)
             );
           }?>
         </section>
-        <!-- /.afisha -->
+        <!-- /.poster -->
       </div>
     </main>
 <?php get_footer(); ?>

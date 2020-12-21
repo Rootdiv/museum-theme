@@ -612,12 +612,12 @@ body {
   width: 42px;
 }
 
-.afisha {
+.poster {
   padding-bottom: 50px;
   border-bottom: 1px solid #C02223;
 }
 
-.afisha h1 {
+.poster h1 {
   margin: 0;
   margin-bottom: 5px;
   font-weight: 500;
@@ -626,59 +626,59 @@ body {
   color: #323232;
 }
 
-.afisha-tabs {
+.poster-tabs {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 15px;
 }
 
-.afisha-tabs div {
+.poster-tabs div {
   font-size: 14px;
   color: #A2A2A2;
   cursor: pointer;
   margin-left: 23px;
 }
 
-.afisha-tabs div .active {
+.poster-tabs div .active {
   text-decoration-line: underline;
   color: #C02223;
 }
 
-.afisha-posts {
+.poster-posts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   gap: 30px;
 }
 
-.afisha-posts-content {
+.poster-posts-content {
   font-weight: 500;
 }
 
-.afisha-posts-content a {
+.poster-posts-content a {
   text-decoration: none;
 }
 
-.afisha-posts-thumb {
+.poster-posts-thumb {
   min-width: 380px;
   object-fit: cover;
 }
 
-.afisha-posts-excerpt {
+.poster-posts-excerpt {
   font-size: 16px;
   color: #A2A2A2;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-.afisha-posts-title {
+.poster-posts-title {
   font-size: 18px;
   line-height: 130%;
   color: #323232;
   margin: 0;
 }
 
-.afisha-link {
+.poster-link {
   margin: 0 auto;
   margin-top: 50px;
   text-decoration: none;
