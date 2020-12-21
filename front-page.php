@@ -15,7 +15,6 @@
                 'order' => 'ASC'
               ]);
               //Проверяем есть ли посты
-              global $i;
               $i = 1;
               if ($query->have_posts()) {
                 while ($query->have_posts()) {
@@ -28,7 +27,7 @@
                     else echo get_template_directory_uri().'/assets/images/img-default.png';
                   ?>" alt="<?php the_title()?>">
                   <a class="article-permalink" href="<?=get_the_permalink()?>">
-                    <h4 class="article-title"><?php the_content() ?></h4>
+                    <h1 class="article-title"><?php the_content() ?></h1>
                   </a>
                   <a class="article-btn" href="#">Купить билет</a>
                 </div>
@@ -47,9 +46,7 @@
         </section>
         <!-- /.hero -->
         <section class="poster">
-          <?php foreach (get_the_category() as $category) {
-              echo '<h1>'.esc_html($category->name).'</h1>';
-          }?>
+          <h1>Афиша</h1>
           <div class="poster-tabs">
               <div>Текущие</div>
               <div>Будущие</div>
@@ -79,10 +76,7 @@
                 <h4 class="poster-posts-title"><?php the_title()?></h4>
               </a>
             </div>
-            <?php }
-            }
-            wp_reset_postdata(); // Сбрасываем $post
-            ?>
+            <?php } ?>
           </div>
           <!-- /.poster-posts -->
           <?php foreach (get_the_category() as $category) {
@@ -90,10 +84,64 @@
               '<a href="%s" class="poster-link">Вся %s</a>',
               esc_url(get_category_link($category)),
               esc_html($category->name)
-            );
-          }?>
+            ); }
+          } else _e('Posts not found.', 'museum');
+          wp_reset_postdata(); // Сбрасываем $post
+          ?>
         </section>
         <!-- /.poster -->
+        <section class="programs">
+          <h2>Образовательные программы</h2>
+          <!-- Slider main container -->
+          <div class="swiper-container programs-slider">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <?php
+              global $post;
+              //Формируем запрос в БД
+              $query = new WP_Query([
+                'posts_per_page' => 7,
+                'category_name' => 'programmy',
+                'order' => 'ASC'
+              ]);
+              //Проверяем есть ли посты
+              $i = 1;
+              if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                  $query->the_post();?>
+              <!-- Slides -->
+              <div class="swiper-slide" data-num="<?=$i++?>">
+                <div class="programs-article-post">
+                  <img src="<?php
+                    if( has_post_thumbnail() ) echo get_the_post_thumbnail_url();
+                    else echo get_template_directory_uri().'/assets/images/img-default.png';
+                  ?>" alt="<?php the_title()?>">
+                  <div class="programs-article-text">
+                    <h3 class="programs-article-title"><?php the_title()?></h3>
+                    <?php the_content() ?>
+                  </div>
+                </div>
+              </div>
+              <?php }
+              } else _e('Posts not found.', 'museum');?>
+            </div>
+            <div class="swiper-button-arr">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-arr-num"><sapn class="swiper-num-area"></sapn></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <?php foreach (get_the_category() as $category) {
+            printf(
+              '<a href="%s" class="programs-link">Все %s</a>',
+              esc_url(get_category_link($category)),
+              esc_html($category->name)
+            );
+          }
+          wp_reset_postdata(); // Сбрасываем $post
+          ?>
+        </section>
+        <!-- /.programs --> 
       </div>
     </main>
 <?php get_footer(); ?>

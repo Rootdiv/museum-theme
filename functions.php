@@ -495,7 +495,8 @@ function enqueue_museum_style() {
   wp_enqueue_style( 'style', get_stylesheet_uri() );
   wp_enqueue_style( 'swipe-slider', get_template_directory_uri().'/assets/css/swiper-bundle.min.css', 'museum-theme', time() );
   wp_enqueue_style( 'museum-theme', get_template_directory_uri().'/assets/css/museum-theme.css', 'style', time() );
-  wp_enqueue_style( 'Roboto-Slab', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap');
+  wp_enqueue_style( 'Roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+  wp_enqueue_style( 'Open-Sans', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
   wp_deregister_script( 'jquery-core' );
   wp_register_script( 'jquery-core', '//code.jquery.com/jquery-3.5.1.min.js');
   wp_enqueue_script( 'jquery' );

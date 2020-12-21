@@ -1,0 +1,78 @@
+.programs
+  padding-top: 50px
+  padding-bottom: 100px
+  border-bottom: 1px solid #C02223
+  h2
+    font-weight: 500
+    font-size: 30px
+    line-height: 36px
+    color: #323232
+    margin-bottom: 40px
+  &-slider
+    overflow: inherit
+  .swiper-slide
+    opacity: 0.3
+  .swiper-slide-active
+    opacity: 1
+  &-article
+    &-post
+      display: flex
+    &-text
+      padding-top: 45px
+      padding-left: 30px
+      p
+        font-family: 'Open Sans'
+        font-style: normal
+        font-weight: 500
+        font-size: 16px
+        line-height: 130%
+        color: #666666
+        margin: 0
+        margin-bottom: 25px
+    &-title
+      font-weight: 500
+      font-size: 24px
+      line-height: 130%
+      color: #323232
+      margin: 0
+      margin-bottom: 30px
+  &-link
+    margin: 0 auto
+    margin-top: 50px
+    text-decoration: none
+    color: #C02223
+    border: 1px solid #C02223
+    width: 270px
+    height: 60px
+    text-transform: uppercase
+    display: flex
+    justify-content: center
+    align-items: center
+  .swiper
+    &-slide-prev
+      opacity: 0
+    &-button
+      &-arr
+        font-weight: 500
+        font-size: 14px
+        color: #C02223
+        position: absolute
+        top: 0
+        right: 485px
+        height: 16px
+        display: flex
+        align-items: center
+        justify-content: center
+      &-next
+        background: url(../images/arrow-grey.svg) no-repeat
+        right: 50px
+      &-prev
+        background: url(../images/arrow-grey.svg) no-repeat
+        transform: rotate(180deg)
+        left: 50px
+      &-next, &-prev
+        background-position-y: 50%
+        width: inherit
+        &::after
+          content: ''
+          width: 42px

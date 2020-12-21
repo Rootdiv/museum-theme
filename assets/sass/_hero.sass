@@ -1,6 +1,5 @@
 .hero
   padding-top: 30px
-  margin: 0 auto
   max-width: 1200px
   &-slider
     overflow: inherit
@@ -16,23 +15,20 @@
         display: flex
   .article
     &-post
-      font-weight: 500
       position: relative
     &-permalink, &-btn
       position: absolute
-      top: 32%
+      top: 25%
       left: 0
       width: 700px
       color: #ffffff
       text-decoration: none
-      padding: 0
       margin: 0
       margin-left: 30px
-      h1, p
-        margin: 0
-      h1
-        font-size: 46px
-        line-height: 146%
+    &-title
+      margin: 0
+      font-size: 46px
+      line-height: 146%
     &-btn
       top: 62%
       background: rgba(192, 34, 35, 0.5)
@@ -40,6 +36,7 @@
       width: 270px
       height: 60px
       font-size: 16px
+      font-weight: 500
       text-transform: uppercase
       align-items: center
       justify-content: center
@@ -47,6 +44,8 @@
         background: #C02223
   .swiper-button
     &-arr
+      font-weight: 500
+      font-size: 14px
       color: #ffffff
       position: absolute
       right: 90px
@@ -57,13 +56,13 @@
       align-items: center
       justify-content: center
     &-next
-      background: url(../images/arrow-left.svg) no-repeat
+      background: url(../images/arrow-white.svg) no-repeat 50%
+      transform: rotate(180deg)
       right: 50px
     &-prev
-      background: url(../images/arrow-right.svg) no-repeat
+      background: url(../images/arrow-white.svg) no-repeat 50%
       left: 50px
     &-next, &-prev
-      background-position-y: 50%
       width: inherit
       &::after
         content: ''

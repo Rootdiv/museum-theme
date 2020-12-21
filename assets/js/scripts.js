@@ -15,31 +15,58 @@ function backToTop() {
   }
 }
 
-var mySwiper = new Swiper('.hero-slider', {
-  // Optional parameters
-  speed: 700,
-  spaceBetween: 30,
-  loop: true,
+if (document.querySelector('.hero')) {
+  var mySwiper = new Swiper('.hero-slider', {
+    // Optional parameters
+    speed: 700,
+    spaceBetween: 30,
+    loop: true,
 
-  navigation: {
-    prevEl: '.swiper-button-next',
-    nextEl: '.swiper-button-prev',
-  },
-})
+    navigation: {
+      prevEl: '.swiper-button-next',
+      nextEl: '.swiper-button-prev',
+    },
+  })
 
-const allNum = document.querySelectorAll('.article-post').length - 2;
-let slideNumArea = document.querySelector('.swiper-num-area');
-let slideNum = document.querySelector('.swiper-slide-active');
-slideNumArea.innerHTML = slideNum.getAttribute('data-num') + ' / ' + allNum;
+  const allNum = document.querySelectorAll('.article-post').length - 2;
+  let slideNumArea = document.querySelector('.swiper-num-area');
+  let slideNum = document.querySelector('.swiper-slide-active');
+  slideNumArea.innerHTML = slideNum.getAttribute('data-num') + ' / ' + allNum;
 
-mySwiper.on('slideChange', function () {
-  setTimeout(function () {
-    let slideNumArea = document.querySelector('.swiper-num-area');
-    let slideNum = document.querySelector('.swiper-slide-active');
-    slideNumArea.innerHTML = slideNum.getAttribute('data-num') + ' / ' + allNum;
-  }, 10);
-});
+  mySwiper.on('slideChange', function () {
+    setTimeout(function () {
+      let slideNumArea = document.querySelector('.swiper-num-area');
+      let slideNum = document.querySelector('.swiper-slide-active');
+      slideNumArea.innerHTML = slideNum.getAttribute('data-num') + ' / ' + allNum;
+    }, 10);
+  });
 
+  var progSwiper = new Swiper('.programs-slider', {
+    // Optional parameters
+    speed: 700,
+    spaceBetween: 30,
+    loop: true,
+
+    navigation: {
+      prevEl: '.swiper-button-next',
+      nextEl: '.swiper-button-prev',
+    },
+  })
+
+  const progAllNum = document.querySelectorAll('.programs-article-post').length - 2;
+  let progSlideNumArea = document.querySelector('.programs-slider .swiper-num-area');
+  let progSlideNum = document.querySelector('.programs-slider .swiper-slide-active');
+  progSlideNumArea.innerHTML = progSlideNum.getAttribute('data-num') + ' / ' + progAllNum;
+
+  progSwiper.on('slideChange', function () {
+    setTimeout(function () {
+      let progSlideNumArea = document.querySelector('.programs-slider .swiper-num-area');
+      let progSlideNum = document.querySelector('.programs-slider .swiper-slide-active');
+      progSlideNumArea.innerHTML = progSlideNum.getAttribute('data-num') + ' / ' + progAllNum;
+    }, 10);
+  });
+
+}
 
 let menuToggle = $('.header-menu-toggle');
 menuToggle.on('click', function (event) {

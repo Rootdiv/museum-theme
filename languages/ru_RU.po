@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: museum\n"
-"POT-Creation-Date: 2020-12-19 15:26+0300\n"
+"POT-Creation-Date: 2020-12-22 00:52+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: My Best Team\n"
@@ -19,135 +19,147 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 
-#: functions.php:44
+#: contacts.php:14
+msgid "Through the feedback form"
+msgstr "Через форму обратной связи"
+
+#: contacts.php:26
+msgid "Or by these contacts"
+msgstr "Или этими контактами"
+
+#: front-page.php:36 front-page.php:88 front-page.php:126
+msgid "Posts not found."
+msgstr "Постов нет."
+
+#: functions.php:25
 msgid "Menu in header"
 msgstr "Меню в хедере"
 
-#: functions.php:45 functions.php:61
+#: functions.php:26 functions.php:42
 msgid "Menu in footer"
 msgstr "Меню в футере"
 
-#: functions.php:63
+#: functions.php:44
 msgid "Add menu here."
 msgstr "Добавьте меню сюда."
 
-#: functions.php:73
+#: functions.php:54
 msgid "Text in footer"
 msgstr "Текст в футере"
 
-#: functions.php:75
+#: functions.php:56
 msgid "Add text here."
 msgstr "Добавьте текст сюда."
 
-#: functions.php:85
+#: functions.php:66
 msgid "Contacts"
 msgstr "Контакты"
 
-#: functions.php:87
+#: functions.php:68
 msgid "Add widgets here."
 msgstr "Добавьте виджеты сюда."
 
-#: functions.php:108 functions.php:132 functions.php:146
+#: functions.php:89 functions.php:113 functions.php:127
 msgid "Schedule"
 msgstr "График работы"
 
-#: functions.php:109
+#: functions.php:90
 msgid "Schedule."
 msgstr "График работы."
 
-#: functions.php:147
+#: functions.php:128
 msgid "Weekdays"
 msgstr "Рабочие дни"
 
-#: functions.php:148
+#: functions.php:129
 msgid "Weekend"
 msgstr "Выходные"
 
-#: functions.php:152 functions.php:307 functions.php:448
+#: functions.php:133 functions.php:288 functions.php:429
 msgid "Title:"
 msgstr "Заголовок:"
 
-#: functions.php:156
+#: functions.php:137
 msgid "Weekdays:"
 msgstr "Рабочие дни:"
 
-#: functions.php:160
+#: functions.php:141
 msgid "Weekend:"
 msgstr "Выходные:"
 
-#: functions.php:227
+#: functions.php:208
 msgid "Social networks"
 msgstr "Социальные сети"
 
-#: functions.php:228
+#: functions.php:209
 msgid "Links to social networks."
 msgstr "Ссылки на социальные сети."
 
-#: functions.php:311
+#: functions.php:292
 msgid "VKontakte:"
 msgstr "ВКонтакте:"
 
-#: functions.php:315
+#: functions.php:296
 msgid "Facebook:"
 msgstr "Фейсбук:"
 
-#: functions.php:319
+#: functions.php:300
 msgid "Instagram:"
 msgstr "Инстаграм:"
 
-#: functions.php:323
+#: functions.php:304
 msgid "Twitter:"
 msgstr "Твиттер:"
 
-#: functions.php:327
+#: functions.php:308
 msgid "Youtube:"
 msgstr "Ютуб:"
 
-#: functions.php:397
+#: functions.php:378
 msgid "Phones"
 msgstr "Телефоны"
 
-#: functions.php:398
+#: functions.php:379
 msgid "Phones."
 msgstr "Телефоны."
 
-#: functions.php:452
+#: functions.php:433
 msgid "Phone 1:"
 msgstr "Телефон 1:"
 
-#: functions.php:456
+#: functions.php:437
 msgid "Phone 2:"
 msgstr "Телефон 2:"
 
-#: functions.php:596
+#: functions.php:578
 msgid "Main"
 msgstr "Главная"
 
-#: functions.php:597
+#: functions.php:579
 msgid "Category"
 msgstr "Категории"
 
-#: functions.php:599
+#: functions.php:581
 msgid "Search results for the query"
 msgstr "Результаты поиска по запросу"
 
-#: functions.php:600
+#: functions.php:582
 msgid "Records with tag"
 msgstr "Записи с тегом"
 
-#: functions.php:601
+#: functions.php:583
 msgid "Article author"
 msgstr "Автор статьи"
 
-#: functions.php:602
+#: functions.php:584
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: functions.php:603
+#: functions.php:585
 msgid "Page"
 msgstr "Страница"
 
-#: functions.php:604
+#: functions.php:586
 msgid "Page comments"
 msgstr "Страница комментариев"
 
@@ -295,17 +307,8 @@ msgstr "Страница комментариев"
 #~ msgid "Send"
 #~ msgstr "Отправить"
 
-#~ msgid "Through the feedback form"
-#~ msgstr "Через форму обратной связи"
-
-#~ msgid "Or by these contacts"
-#~ msgstr "Или этими контактами"
-
 #~ msgid "Read more"
 #~ msgstr "Читать далее"
-
-#~ msgid "Posts not found."
-#~ msgstr "Постов нет."
 
 #~ msgid "Recommended"
 #~ msgstr "Рекомендуем"
