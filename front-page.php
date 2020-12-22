@@ -11,7 +11,7 @@
               //Формируем запрос в БД
               $query = new WP_Query([
                 'posts_per_page' => 7,
-                'category_name' => 'sobytiya',
+                'category_name' => 'vystavka',
                 'order' => 'ASC'
               ]);
               //Проверяем есть ли посты
@@ -81,7 +81,7 @@
           <!-- /.poster-posts -->
           <?php foreach (get_the_category() as $category) {
             printf(
-              '<a href="%s" class="poster-link">Вся %s</a>',
+              '<a href="%s" class="button-link">Вся %s</a>',
               esc_url(get_category_link($category)),
               esc_html($category->name)
             ); }
@@ -133,7 +133,7 @@
           </div>
           <?php foreach (get_the_category() as $category) {
             printf(
-              '<a href="%s" class="programs-link">Все %s</a>',
+              '<a href="%s" class="button-link">Все %s</a>',
               esc_url(get_category_link($category)),
               esc_html($category->name)
             );
@@ -141,7 +141,63 @@
           wp_reset_postdata(); // Сбрасываем $post
           ?>
         </section>
-        <!-- /.programs --> 
+        <!-- /.programs -->
+      <section class="news">
+          <h2>События</h2>
+          <div class="news-posts">
+            <?php
+            global $post;
+
+            $myposts = get_posts([
+              'numberposts' => 3,
+              'category_name' => 'sobytiya',
+              'order' => 'ASC'
+            ]);
+
+            if ($myposts) {
+              $cnt=1;
+              foreach ($myposts as $post) {
+                setup_postdata($post);
+                if($cnt == 1){?>
+            <div class="news-posts-content item-<?=$cnt++?>">
+              <a href="<?=get_the_permalink()?>" class="news-posts-permalink">
+                <img src="<?php if( has_post_thumbnail() ) the_post_thumbnail_url();
+                  else echo get_template_directory_uri().'/assets/images/img-default.png';
+                ?>" alt="<?php the_title()?>" class="news-posts-thumb" />
+              </a>
+              <span class="date"><?php the_time('j F Y')?></span>
+              <a href="<?=get_permalink()?>" class="news-posts-permalink">
+                <h4 class="news-posts-title"><?php the_title()?></h4>
+              </a>
+              <div class="news-posts-text"><?php the_content()?></div>
+            </div>            
+            <?php }else{ ?>
+            <div class="news-posts-content item-<?=$cnt++?>">
+              <a href="<?=get_the_permalink()?>" class="news-posts-permalink">
+                <img src="<?php if( has_post_thumbnail() ) the_post_thumbnail_url();
+                  else echo get_template_directory_uri().'/assets/images/img-default.png';
+                ?>" alt="<?php the_title()?>" class="news-posts-thumb" />
+              </a>
+              <span class="date"><?php the_time('j F Y')?></span>
+              <a href="<?=get_permalink()?>" class="news-posts-permalink">
+                <h3 class="news-posts-title"><?php the_title()?></h3>
+              </a>
+            </div>
+            <?php }
+            } ?>
+          </div>
+          <!-- /.news-posts -->
+          <?php foreach (get_the_category() as $category) {
+            printf(
+              '<a href="%s" class="button-link">Все %s</a>',
+              esc_url(get_category_link($category)),
+              esc_html($category->name)
+            ); }
+          } else _e('Posts not found.', 'museum');
+          wp_reset_postdata(); // Сбрасываем $post
+          ?>
+        </section>
+        <!-- /.news -->
       </div>
     </main>
 <?php get_footer(); ?>
