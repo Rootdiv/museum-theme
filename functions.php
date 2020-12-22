@@ -576,7 +576,6 @@ function the_breadcrumbs() {
 
   /* === ОПЦИИ === */
   $text['home']     = __('Main', 'museum'); // текст ссылки "Главная"
-  $text['tax']      = __('Category', 'museum'); // текст ссылки "Категории"
   $text['category'] = '%s'; // текст для страницы рубрики
   $text['search']   = __('Search results for the query', 'museum').' "%s"'; // текст для страницы с результатами поиска
   $text['tag']      = __('Records with tag', 'museum').' "%s"'; // текст для страницы тега
@@ -587,7 +586,12 @@ function the_breadcrumbs() {
 
   $wrap_before    = '<div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
   $wrap_after     = '</div><!-- .breadcrumbs -->'; // закрывающий тег обертки
-  $sep            = '<span class="breadcrumbs__separator"> › </span>'; // разделитель между "крошками"
+  $sep            = '
+  <span class="breadcrumbs__separator">
+    <svg width="15" height="10" fill="#666666" class="icon">
+      <use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#arrow"></use>
+    </svg> 
+  </span>'; // разделитель между "крошками"
   $before         = '<span class="breadcrumbs__current">'; // тег перед текущей "крошкой"
   $after          = '</span>'; // тег после текущей "крошки"
 
@@ -631,13 +635,11 @@ function the_breadcrumbs() {
       if ( get_query_var( 'paged' ) ) {
         $position += 1;
         $cat = get_query_var('cat');
-        echo $sep . $before . sprintf( $text['tax']) . $after;
         echo $sep . sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
         echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
       } else {
         if ( $show_current ) {
           if ( $position >= 1 ) echo $sep;
-          echo $before . 'Категории' . $after . $sep;
           echo $before . sprintf( $text['category'], single_cat_title( '', false) ) . $after;
         } elseif ( $show_last_sep ) echo $sep;
       }

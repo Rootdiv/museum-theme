@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: museum\n"
-"POT-Creation-Date: 2020-12-22 00:52+0300\n"
+"POT-Creation-Date: 2020-12-22 21:48+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: My Best Team\n"
@@ -19,6 +19,59 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 
+#: category.php:20 front-page.php:36 front-page.php:88 front-page.php:126
+#: front-page.php:196
+msgid "Posts not found."
+msgstr "Постов нет."
+
+#: comments.php:57
+#, php-format
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: comments.php:63
+msgid "(Edit)"
+msgstr "(Изменить)"
+
+#: comments.php:69
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает модерации."
+
+#: comments.php:112
+msgid "Comments"
+msgstr "Комментарии"
+
+#: comments.php:118
+msgid "Add comment"
+msgstr "Добавить комментарий"
+
+#: comments.php:134
+msgid "Register if you want to comment"
+msgstr "Зарегистрируйтесь если хотите оставить комментарий"
+
+#: comments.php:146
+msgid "Comments are closed."
+msgstr "Комментарии закрыты."
+
+#: comments.php:154
+msgctxt "noun"
+msgid "What do you think?"
+msgstr "Что вы думаете на этот счет?"
+
+#: comments.php:164
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+"Вы должны <a href=\"%s\">авторизоваться</a>, чтобы оставить комментарий."
+
+#: comments.php:169
+msgid "Your email address will not be published."
+msgstr "Ваш электронный адрес не будет опубликован."
+
+#: comments.php:173
+msgid "Send"
+msgstr "Отправить"
+
 #: contacts.php:14
 msgid "Through the feedback form"
 msgstr "Через форму обратной связи"
@@ -26,10 +79,6 @@ msgstr "Через форму обратной связи"
 #: contacts.php:26
 msgid "Or by these contacts"
 msgstr "Или этими контактами"
-
-#: front-page.php:36 front-page.php:88 front-page.php:126
-msgid "Posts not found."
-msgstr "Постов нет."
 
 #: functions.php:25
 msgid "Menu in header"
@@ -135,33 +184,55 @@ msgstr "Телефон 2:"
 msgid "Main"
 msgstr "Главная"
 
-#: functions.php:579
-msgid "Category"
-msgstr "Категории"
-
-#: functions.php:581
+#: functions.php:580
 msgid "Search results for the query"
 msgstr "Результаты поиска по запросу"
 
-#: functions.php:582
+#: functions.php:581
 msgid "Records with tag"
 msgstr "Записи с тегом"
 
-#: functions.php:583
+#: functions.php:582
 msgid "Article author"
 msgstr "Автор статьи"
 
-#: functions.php:584
+#: functions.php:583
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: functions.php:585
+#: functions.php:584
 msgid "Page"
 msgstr "Страница"
 
-#: functions.php:586
+#: functions.php:585
 msgid "Page comments"
 msgstr "Страница комментариев"
+
+#: pagination.php:7 template-parts/content.php:64
+msgid "Back"
+msgstr "Назад"
+
+#: pagination.php:8 template-parts/content.php:65
+msgid "Forward"
+msgstr "Вперёд"
+
+#: template-parts/content.php:35
+#, php-format
+msgid "Continue reading <span class=\"screen-reader-text\">\"%s\"</span>"
+msgstr "Продолжение чтения <span class=\"screen-reader-text\">\"%s\"</span>"
+
+#: template-parts/content.php:48
+msgid "Pages:"
+msgstr "Страницы:"
+
+#~ msgid "On the main"
+#~ msgstr "На главную"
+
+#~ msgid "Page author"
+#~ msgstr "Страница автора"
+
+#~ msgid "Category"
+#~ msgstr "Категории"
 
 #~ msgid "Lessons"
 #~ msgstr "Уроки"
@@ -272,41 +343,6 @@ msgstr "Страница комментариев"
 #~ msgid "Teachers"
 #~ msgstr "Учителя"
 
-#~ msgid "%1$s, %2$s"
-#~ msgstr "%1$s, %2$s"
-
-#~ msgid "(Edit)"
-#~ msgstr "(Изменить)"
-
-#~ msgid "Your comment is awaiting moderation."
-#~ msgstr "Ваш комментарий ожидает модерации."
-
-#~ msgid "Comments"
-#~ msgstr "Комментарии"
-
-#~ msgid "Add comment"
-#~ msgstr "Добавить комментарий"
-
-#~ msgid "Register if you want to comment"
-#~ msgstr "Зарегистрируйтесь если хотите оставить комментарий"
-
-#~ msgid "Comments are closed."
-#~ msgstr "Комментарии закрыты."
-
-#~ msgctxt "noun"
-#~ msgid "What do you think?"
-#~ msgstr "Что вы думаете на этот счет?"
-
-#~ msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-#~ msgstr ""
-#~ "Вы должны <a href=\"%s\">авторизоваться</a>, чтобы оставить комментарий."
-
-#~ msgid "Your email address will not be published."
-#~ msgstr "Ваш электронный адрес не будет опубликован."
-
-#~ msgid "Send"
-#~ msgstr "Отправить"
-
 #~ msgid "Read more"
 #~ msgstr "Читать далее"
 
@@ -345,24 +381,6 @@ msgstr "Страница комментариев"
 
 #~ msgid "Recommended articles from a specific category."
 #~ msgstr "Рекомендуемые статьи из определённой категории."
-
-#~ msgid "Continue reading <span class=\"screen-reader-text\">\"%s\"</span>"
-#~ msgstr "Продолжение чтения <span class=\"screen-reader-text\">\"%s\"</span>"
-
-#~ msgid "Pages:"
-#~ msgstr "Страницы:"
-
-#~ msgid "On the main"
-#~ msgstr "На главную"
-
-#~ msgid "Back"
-#~ msgstr "Назад"
-
-#~ msgid "Forward"
-#~ msgstr "Вперёд"
-
-#~ msgid "Page author"
-#~ msgstr "Страница автора"
 
 #~ msgid "Subscribe to our newsletter"
 #~ msgstr "Подпишитесь на нашу рассылку"

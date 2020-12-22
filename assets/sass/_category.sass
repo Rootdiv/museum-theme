@@ -1,0 +1,39 @@
+.category
+  &-wrapper
+    padding-top: 40px
+    padding-bottom: 50px
+  &-list
+    display: flex
+    flex-wrap: wrap
+  &-card
+    text-decoration: none
+    width: 33.33%
+    &:nth-child(2n)
+      padding-left: 30px
+      padding-right: 30px
+    &-thumb
+      width: 100%
+      object-fit: cover
+    &-text
+      font-size: 14px
+      color: #323232
+      display: block
+      margin-bottom: 5px
+    &-title
+      font-weight: 500
+      font-size: 18px
+      line-height: 130%
+      color: #323232
+      display: flex
+      justify-content: space-between
+      margin-top: 15px
+      margin-bottom: 5px
+
+@media screen and (max-width: 1200px)
+  .post
+    &-card
+      width: 48%
+@media screen and (max-width: 615px)
+  .post
+    &-card
+      width: 100%
