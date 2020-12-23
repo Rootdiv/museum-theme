@@ -293,7 +293,11 @@ body {
 }
 
 .widget-phones-wrapper {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.widget-phones img {
+  display: flex;
 }
 
 .widget-phones a {
@@ -343,6 +347,22 @@ body {
   color: #ffffff;
 }
 
+.footer-logo img {
+  filter: brightness(7);
+}
+
+.footer-logo a {
+  text-decoration: none;
+}
+
+.footer-logo .logo {
+  max-width: 380px;
+}
+
+.footer-logo .logo-name {
+  color: #ffffff;
+}
+
 .footer section {
   padding: initial;
 }
@@ -384,21 +404,6 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-}
-
-.footer-info img {
-  filter: brightness(7);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.footer-info .logo {
-  max-width: 380px;
-}
-
-.footer-info .logo-name {
-  color: #ffffff;
 }
 
 .footer-menu-title {
