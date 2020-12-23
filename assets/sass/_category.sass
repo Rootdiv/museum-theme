@@ -3,14 +3,12 @@
     padding-top: 40px
     padding-bottom: 50px
   &-list
-    display: flex
-    flex-wrap: wrap
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: 1fr
+    grid-gap: 30px
   &-card
     text-decoration: none
-    width: 33.33%
-    &:nth-child(2n)
-      padding-left: 30px
-      padding-right: 30px
     &-thumb
       width: 100%
       object-fit: cover

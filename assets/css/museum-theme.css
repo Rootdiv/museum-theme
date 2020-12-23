@@ -686,7 +686,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
-  gap: 30px;
+  grid-gap: 30px;
 }
 
 .poster-posts-content {
@@ -974,18 +974,14 @@ body {
 }
 
 .category-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 30px;
 }
 
 .category-card {
   text-decoration: none;
-  width: 33.33%;
-}
-
-.category-card:nth-child(2n) {
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .category-card-thumb {
