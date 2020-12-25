@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: museum\n"
-"POT-Creation-Date: 2020-12-23 16:26+0300\n"
+"POT-Creation-Date: 2020-12-25 14:13+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: My Best Team\n"
@@ -72,13 +72,9 @@ msgstr "Ваш электронный адрес не будет опублик�
 msgid "Send"
 msgstr "Отправить"
 
-#: contacts.php:14
-msgid "Through the feedback form"
-msgstr "Через форму обратной связи"
-
-#: contacts.php:26
-msgid "Or by these contacts"
-msgstr "Или этими контактами"
+#: contacts.php:13
+msgid "Feedback form"
+msgstr "Форма обратной связи"
 
 #: functions.php:25
 msgid "Menu in header"
@@ -108,7 +104,7 @@ msgstr "Контакты"
 msgid "Add widgets here."
 msgstr "Добавьте виджеты сюда."
 
-#: functions.php:78 functions.php:516
+#: functions.php:78 functions.php:516 functions.php:578
 msgid "Popular events"
 msgstr "Популярные события"
 
@@ -128,7 +124,7 @@ msgstr "Рабочие дни"
 msgid "Weekend"
 msgstr "Выходные"
 
-#: functions.php:145 functions.php:300 functions.php:441 functions.php:594
+#: functions.php:145 functions.php:300 functions.php:441 functions.php:583
 msgid "Title:"
 msgstr "Заголовок:"
 
@@ -188,39 +184,35 @@ msgstr "Телефон 2:"
 msgid "Popular events."
 msgstr "Популярные события."
 
-#: functions.php:589
-msgid "Recommended articles"
-msgstr "Рекомендуемые статьи"
-
-#: functions.php:598
+#: functions.php:587
 msgid "Number of posts:"
 msgstr "Количество постов:"
 
-#: functions.php:738
+#: functions.php:727
 msgid "Main"
 msgstr "Главная"
 
-#: functions.php:740
+#: functions.php:729
 msgid "Search results for the query"
 msgstr "Результаты поиска по запросу"
 
-#: functions.php:741
+#: functions.php:730
 msgid "Records with tag"
 msgstr "Записи с тегом"
 
-#: functions.php:742
+#: functions.php:731
 msgid "Article author"
 msgstr "Автор статьи"
 
-#: functions.php:743
+#: functions.php:732
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: functions.php:744
+#: functions.php:733
 msgid "Page"
 msgstr "Страница"
 
-#: functions.php:745
+#: functions.php:734
 msgid "Page comments"
 msgstr "Страница комментариев"
 
@@ -248,3 +240,9 @@ msgstr "Предыдущие"
 #: template-parts/content.php:65
 msgid "Following"
 msgstr "Следующее"
+
+#~ msgid "Or by these contacts"
+#~ msgstr "Или этими контактами"
+
+#~ msgid "Recommended articles"
+#~ msgstr "Рекомендуемые статьи"

@@ -1357,6 +1357,7 @@ body {
 
 .contacts-input {
   width: 100%;
+  border: 1px solid;
   padding: 10px 15px;
   height: 40px;
   font-size: 14px;
@@ -1370,6 +1371,7 @@ body {
 
 .contacts-textarea {
   width: 100%;
+  border: 1px solid;
   padding: 10px 15px;
   min-height: 220px;
   font-size: 14px;
