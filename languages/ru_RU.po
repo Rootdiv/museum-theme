@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: museum\n"
-"POT-Creation-Date: 2020-12-25 14:13+0300\n"
+"POT-Creation-Date: 2020-12-25 18:51+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: My Best Team\n"
@@ -240,9 +240,3 @@ msgstr "Предыдущие"
 #: template-parts/content.php:65
 msgid "Following"
 msgstr "Следующее"
-
-#~ msgid "Or by these contacts"
-#~ msgstr "Или этими контактами"
-
-#~ msgid "Recommended articles"
-#~ msgstr "Рекомендуемые статьи"

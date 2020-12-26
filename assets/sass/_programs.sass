@@ -42,7 +42,7 @@
         color: #C02223
         position: absolute
         top: 0
-        right: 485px
+        right: 490px
         height: 16px
         display: flex
         align-items: center
@@ -60,3 +60,30 @@
         &::after
           content: ''
           width: 42px
+
+@media screen and (max-width: 1230px)
+  .programs
+    &-slider
+      overflow: hidden
+    .swiper
+      &-button
+        &-arr
+          right: 220px
+@media screen and (max-width: 1024px)
+  .programs
+    &-article
+      &-post
+        height: auto
+        flex-wrap: wrap
+        img
+          width: 100%
+      &-text
+        padding-left: 0
+        p:last-child
+          margin-bottom: 50px
+    .swiper
+      &-button
+        &-arr
+          top: unset
+          right: 65px
+          bottom: 0

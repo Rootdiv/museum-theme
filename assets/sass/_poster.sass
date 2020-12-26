@@ -29,7 +29,7 @@
       a
         text-decoration: none
     &-thumb
-      min-width: 380px
+      width: 100%
       object-fit: cover
     &-excerpt
       font-size: 16px
@@ -41,3 +41,16 @@
       line-height: 130%
       color: #323232
       margin: 0
+
+@media screen and (max-width: 1024px)
+  .poster
+    &-posts
+      grid-template-columns: repeat(2, 1fr)
+@media screen and (max-width: 768px)
+  .poster
+    &-posts
+      grid-template-columns: 1fr
+@media screen and (max-width: 380px)
+  .poster
+    h1
+      margin-bottom: 15px

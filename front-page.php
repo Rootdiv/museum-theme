@@ -4,23 +4,23 @@
         <section class="hero">
           <!-- Slider main container -->
           <div class="swiper-container hero-slider">
+            <?php
+            global $post;
+            //Формируем запрос в БД
+            $query = new WP_Query([
+              'posts_per_page' => 7,
+              'category_name' => 'vystavka',
+              'order' => 'ASC'
+            ]);
+            //Проверяем есть ли посты
+            $i = 1;
+            if ($query->have_posts()) { ?>
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-              <?php
-              global $post;
-              //Формируем запрос в БД
-              $query = new WP_Query([
-                'posts_per_page' => 7,
-                'category_name' => 'vystavka',
-                'order' => 'ASC'
-              ]);
-              //Проверяем есть ли посты
-              $i = 1;
-              if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                  $query->the_post();?>
+            <?php while ($query->have_posts()) {
+              $query->the_post();?>
               <!-- Slides -->
-              <div class="swiper-slide" data-num="<?=$i++?>">
+              <div class="swiper-slide hero-post" data-num="<?=$i++?>">
                 <div class="article-post">
                   <img src="<?php
                     if( has_post_thumbnail() ) echo get_the_post_thumbnail_url();
@@ -32,16 +32,15 @@
                   <a class="article-btn" href="#">Купить билет</a>
                 </div>
               </div>
-              <?php }
-              } else _e('Posts not found.', 'museum');
-              wp_reset_postdata(); // Сбрасываем $post
-              ?>
+              <?php } ?>
             </div>
             <div class="swiper-button-arr">
               <div class="swiper-button-prev"></div>
               <div class="swiper-button-arr-num"><sapn class="swiper-num-area"></sapn></div>
               <div class="swiper-button-next"></div>
             </div>
+            <?php } else _e('Posts not found.', 'museum');
+            wp_reset_postdata(); //Сбрасываем $post;?>
           </div>
         </section>
         <!-- /.hero -->
@@ -86,16 +85,13 @@
               esc_html($category->name)
             ); }
           } else _e('Posts not found.', 'museum');
-          wp_reset_postdata(); // Сбрасываем $post
-          ?>
+          wp_reset_postdata(); //Сбрасываем $post;?>
         </section>
         <!-- /.poster -->
         <section class="programs">
           <h2>Образовательные программы</h2>
           <!-- Slider main container -->
           <div class="swiper-container programs-slider">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
               <?php
               global $post;
               //Формируем запрос в БД
@@ -106,8 +102,10 @@
               ]);
               //Проверяем есть ли посты
               $i = 1;
-              if ($query->have_posts()) {
-                while ($query->have_posts()) {
+              if ($query->have_posts()) {?>
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper programs-post">
+              <?php while ($query->have_posts()) {
                   $query->the_post();?>
               <!-- Slides -->
               <div class="swiper-slide" data-num="<?=$i++?>">
@@ -122,14 +120,14 @@
                   </div>
                 </div>
               </div>
-              <?php }
-              } else _e('Posts not found.', 'museum');?>
+              <?php } ?>
             </div>
             <div class="swiper-button-arr">
               <div class="swiper-button-prev"></div>
               <div class="swiper-button-arr-num"><sapn class="swiper-num-area"></sapn></div>
               <div class="swiper-button-next"></div>
             </div>
+            <?php } else _e('Posts not found.', 'museum');?>
           </div>
           <?php foreach (get_the_category() as $category) {
             printf(
