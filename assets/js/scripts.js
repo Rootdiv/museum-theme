@@ -1,11 +1,10 @@
+'use strict';
+
 //Плавная прокрутка страницы вверх
-window.addEventListener('scroll', function () {
-  let scrollHeight = Math.round(window.scrollY);
-  if (scrollHeight < 300) document.querySelector('.go-top').style.opacity = '0'
-  else document.getElementsByClassName('go-top')[0].style.opacity = '1'
-});
-document.querySelector('.go-top').addEventListener('click', function () {
-  backToTop();
+window.addEventListener('scroll', function() {
+  const scrollHeight = Math.round(window.scrollY);
+  if (scrollHeight < 300) document.querySelector('.go-top').style.opacity = '0';
+  else document.getElementsByClassName('go-top')[0].style.opacity = '1';
 });
 
 function backToTop() {
@@ -14,9 +13,12 @@ function backToTop() {
     setTimeout(backToTop, 0);
   }
 }
+document.querySelector('.go-top').addEventListener('click', function() {
+  backToTop();
+});
 
 if (document.querySelector('.hero-post')) {
-  var topSwiper = new Swiper('.hero-slider', {
+  const topSwiper = new Swiper('.hero-slider', { //jshint ignore:line
     // Optional parameters
     speed: 700,
     spaceBetween: 30,
@@ -25,15 +27,15 @@ if (document.querySelector('.hero-post')) {
       prevEl: '.swiper-button-next',
       nextEl: '.swiper-button-prev',
     },
-  })
+  });
 
   const allNum = document.querySelectorAll('.article-post').length - 2;
-  let slideNumArea = document.querySelector('.swiper-num-area');
-  let slideNum = document.querySelector('.swiper-slide-active');
+  const slideNumArea = document.querySelector('.swiper-num-area');
+  const slideNum = document.querySelector('.swiper-slide-active');
   slideNumArea.innerHTML = slideNum.getAttribute('data-num') + ' / ' + allNum;
 
-  topSwiper.on('slideChange', function () {
-    setTimeout(function () {
+  topSwiper.on('slideChange', function() {
+    setTimeout(function() {
       let slideNumArea = document.querySelector('.swiper-num-area');
       let slideNum = document.querySelector('.swiper-slide-active');
       slideNumArea.innerHTML = slideNum.getAttribute('data-num') + ' / ' + allNum;
@@ -42,7 +44,7 @@ if (document.querySelector('.hero-post')) {
 }
 
 if (document.querySelector('.programs-post')) {
-  var progSwiper = new Swiper('.programs-slider', {
+  const progSwiper = new Swiper('.programs-slider', { //jshint ignore:line
     // Optional parameters
     speed: 700,
     spaceBetween: 30,
@@ -51,15 +53,15 @@ if (document.querySelector('.programs-post')) {
       prevEl: '.swiper-button-next',
       nextEl: '.swiper-button-prev',
     },
-  })
+  });
 
   const progAllNum = document.querySelectorAll('.programs-article-post').length - 2;
-  let progSlideNumArea = document.querySelector('.programs-slider .swiper-num-area');
-  let progSlideNum = document.querySelector('.programs-slider .swiper-slide-active');
+  const progSlideNumArea = document.querySelector('.programs-slider .swiper-num-area');
+  const progSlideNum = document.querySelector('.programs-slider .swiper-slide-active');
   progSlideNumArea.innerHTML = progSlideNum.getAttribute('data-num') + ' / ' + progAllNum;
 
-  progSwiper.on('slideChange', function () {
-    setTimeout(function () {
+  progSwiper.on('slideChange', function() {
+    setTimeout(function() {
       let progSlideNumArea = document.querySelector('.programs-slider .swiper-num-area');
       let progSlideNum = document.querySelector('.programs-slider .swiper-slide-active');
       progSlideNumArea.innerHTML = progSlideNum.getAttribute('data-num') + ' / ' + progAllNum;
@@ -67,26 +69,26 @@ if (document.querySelector('.programs-post')) {
   });
 }
 
-let menuToggle = $('.header-menu-toggle');
-menuToggle.on('click', function (event) {
+const menuToggle = $('.header-menu-toggle');
+menuToggle.on('click', function(event) {
   event.preventDefault();
   $('.header-nav').slideToggle(200);
 });
 
-let contactsForm = $('.contacts-form');
+const contactsForm = $('.contacts-form');
 
-contactsForm.on('submit', function (event) {
+contactsForm.on('submit', function(event) {
   event.preventDefault();
   let formData = new FormData(this);
   formData.append('action', 'contacts_form');
   $.ajax({
     type: "POST",
-    url: adminAjax.url,
+    url: adminAjax.url, //jshint ignore:line
     data: formData,
     contentType: false,
     processData: false,
-    success: function (response) {
+    success: function(response) {
       console.log('Ответ сервера: ' + response);
     }
   });
-})
+});
