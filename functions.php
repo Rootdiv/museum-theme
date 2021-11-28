@@ -92,30 +92,30 @@ add_action( 'widgets_init', 'museum_theme_widgets_init' );
  */
 class WorkTime_Widget extends WP_Widget {
 
- // Регистрация виджета используя основной класс
- function __construct() {
-  // вызов конструктора выглядит так:
-  // __construct( $id_base, $name, $widget_options = array(), $control_options = array() )
-  parent::__construct(
-    'worktime_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: worktime_widget
-    __('Schedule', 'museum'),
-    array( 'description' => __('Schedule.', 'museum'), 'classname' => 'widget-worktime', )
-  );
+  // Регистрация виджета используя основной класс
+  function __construct() {
+    // вызов конструктора выглядит так:
+    // __construct( $id_base, $name, $widget_options = array(), $control_options = array() )
+    parent::__construct(
+      'worktime_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: worktime_widget
+      __('Schedule', 'museum'),
+      array( 'description' => __('Schedule.', 'museum'), 'classname' => 'widget-worktime', )
+    );
 
-  // скрипты/стили виджета, только если он активен
-  if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
-    //add_action('wp_enqueue_scripts', array( $this, 'add_worktime_widget_scripts' ));
-    add_action('wp_head', array( $this, 'add_worktime_widget_style' ) );
+    // скрипты/стили виджета, только если он активен
+    if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
+      //add_action('wp_enqueue_scripts', array( $this, 'add_worktime_widget_scripts' ));
+      add_action('wp_head', array( $this, 'add_worktime_widget_style' ) );
+    }
   }
- }
 
- /**
+  /**
   * Вывод виджета во Фронт-энде
   *
   * @param array $args     аргументы виджета.
   * @param array $instance сохраненные данные из настроек
   */
- function widget( $args, $instance ) {
+  function widget( $args, $instance ) {
     $title = $instance['title'];
     $weekdays = $instance['weekdays'];
     $weekend = $instance['weekend'];
@@ -128,9 +128,9 @@ class WorkTime_Widget extends WP_Widget {
     if ( ! empty( $weekdays ) ) echo '<p class="weekdays" >' . $weekdays . '</p>';
     if ( ! empty( $weekend ) ) echo '<p class="weekend" >' . $weekend . '</p>';
     echo $args['after_widget'];
- }
+  }
 
- /**
+  /**
   * Админ-часть виджета
   *
   * @param array $instance сохраненные данные из настроек
@@ -153,10 +153,10 @@ class WorkTime_Widget extends WP_Widget {
       <label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e('Weekend:', 'museum'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id( 'weekend' ); ?>" name="<?php echo $this->get_field_name( 'weekend' ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>">
     </p>
-    <?php 
+    <?php
   }
 
- /**
+  /**
   * Сохранение настроек виджета. Здесь данные должны быть очищены и возвращены для сохранения их в базу данных.
   *
   * @see WP_Widget::update()
@@ -197,12 +197,12 @@ class WorkTime_Widget extends WP_Widget {
     </style>
     <?php
   }
-} 
+}
 // конец класса WorkTime_Widget
 
 // регистрация WorkTime_Widget в WordPress
 function register_worktime_widget() {
- register_widget( 'WorkTime_Widget' );
+  register_widget( 'WorkTime_Widget' );
 }
 add_action( 'widgets_init', 'register_worktime_widget' );
 
@@ -282,12 +282,12 @@ class Social_Widget extends WP_Widget {
     echo $args['after_widget'];
   }
 
- /**
+  /**
   * Админ-часть виджета
   *
   * @param array $instance сохраненные данные из настроек
   */
- function form( $instance ) {
+  function form( $instance ) {
     $title = @ $instance['title'] ?: '';
     $vkontakte = @ $instance['vkontakte'] ?: '';
     $facebook = @ $instance['facebook'] ?: '';
@@ -297,13 +297,13 @@ class Social_Widget extends WP_Widget {
 
   ?>
   <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'museum'); ?></label> 
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'museum'); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
   </p>
   <p>
     <label for="<?php echo $this->get_field_id( 'vkontakte' ); ?>"><?php _e('VKontakte:', 'museum'); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'vkontakte' ); ?>" name="<?php echo $this->get_field_name( 'vkontakte' ); ?>" type="text" value="<?php echo esc_attr( $vkontakte ); ?>">
-  </p>  
+  </p>
   <p>
     <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e('Facebook:', 'museum'); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text" value="<?php echo esc_attr( $facebook ); ?>">
@@ -321,7 +321,7 @@ class Social_Widget extends WP_Widget {
     <input class="widefat" id="<?php echo $this->get_field_id( 'youtube' ); ?>" name="<?php echo $this->get_field_name( 'youtube' ); ?>" type="text" value="<?php echo esc_attr( $youtube ); ?>">
   </p>
   <?php
- }
+  }
 
   /**
   * Сохранение настроек виджета. Здесь данные должны быть очищены и возвращены для сохранения их в базу данных.
@@ -367,7 +367,7 @@ class Social_Widget extends WP_Widget {
     </style>
     <?php
   }
-} 
+}
 // конец класса Social_Widget
 
 // регистрация Social_Widget в WordPress
@@ -408,7 +408,7 @@ class Phones_Widget extends WP_Widget {
     $title = $instance['title'];
     $phone1 = $instance['phone1'];
     $phone2 = $instance['phone2'];
-    
+
     echo $args['before_widget'];
       if (!empty( $title )) echo $args['before_title'] . $title . $args['after_title'];
       $letters = array('(', ')', '-', ' ', '+', '–');
@@ -449,7 +449,7 @@ class Phones_Widget extends WP_Widget {
       <label for="<?php echo $this->get_field_id( 'phone2' ); ?>"><?php _e('Phone 2:', 'museum'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone2' ); ?>" type="text" value="<?php echo esc_attr( $phone2 ); ?>">
     </p>
-    <?php 
+    <?php
   }
 
   /**
@@ -473,14 +473,13 @@ class Phones_Widget extends WP_Widget {
 
   // скрипт виджета
   function add_phones_widget_scripts() {
-  // фильтр чтобы можно было отключить скрипты
-  if( ! apply_filters( 'show_phones_widget_script', true, $this->id_base ) )
-   return;
+    // фильтр чтобы можно было отключить скрипты
+    if( ! apply_filters( 'show_phones_widget_script', true, $this->id_base ) ) return;
 
-  $theme_url = get_stylesheet_directory_uri();
+    $theme_url = get_stylesheet_directory_uri();
 
-  wp_enqueue_script('phones_widget_script', $theme_url .'/phones_widget_script.js' );
- }
+    wp_enqueue_script('phones_widget_script', $theme_url .'/phones_widget_script.js' );
+  }
 
   // стили виджета
   function add_phones_widget_style() {
@@ -533,7 +532,7 @@ class Posts_Widget extends WP_Widget {
   function widget( $args, $instance ) {
     $title = $instance['title'];
     $count = $instance['count'];
-    
+
     echo $args['before_widget'];
       if (!empty( $title )) echo $args['before_title'] . $title . $args['after_title'];
       if ( ! empty( $count ) ) {
@@ -587,7 +586,7 @@ class Posts_Widget extends WP_Widget {
       <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e('Number of posts:', 'museum'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>">
     </p>
-    <?php 
+    <?php
   }
 
   /**
@@ -610,14 +609,13 @@ class Posts_Widget extends WP_Widget {
 
   // скрипт виджета
   function add_posts_widget_scripts() {
-  // фильтр чтобы можно было отключить скрипты
-  if( ! apply_filters( 'show_posts_widget_script', true, $this->id_base ) )
-   return;
+    // фильтр чтобы можно было отключить скрипты
+    if( ! apply_filters( 'show_posts_widget_script', true, $this->id_base ) ) return;
 
-  $theme_url = get_stylesheet_directory_uri();
+    $theme_url = get_stylesheet_directory_uri();
 
-  wp_enqueue_script('posts_widget_script', $theme_url .'/posts_widget_script.js' );
- }
+    wp_enqueue_script('posts_widget_script', $theme_url .'/posts_widget_script.js' );
+  }
 
   // стили виджета
   function add_posts_widget_style() {
@@ -701,7 +699,7 @@ function delete_intermediate_image_sizes( $sizes ){
   ] );
 }
 
-#Отмена `-scaled` размера - ограничение максимального размера картинки 
+#Отмена `-scaled` размера - ограничение максимального размера картинки
 add_filter( 'big_image_size_threshold', '__return_zero' );
 
 #Меняем стиль многоточия в отрывках
@@ -754,7 +752,7 @@ function the_breadcrumbs() {
   <span class="breadcrumbs__separator">
     <svg width="15" height="10" fill="#666666" class="icon">
       <use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#arrow"></use>
-    </svg> 
+    </svg>
   </span>'; // разделитель между "крошками"
   $before         = '<span class="breadcrumbs__current">'; // тег перед текущей "крошкой"
   $after          = '</span>'; // тег после текущей "крошки"
