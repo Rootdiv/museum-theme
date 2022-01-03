@@ -644,7 +644,6 @@ function enqueue_museum_style() {
   wp_enqueue_style( 'museum-theme', get_template_directory_uri().'/assets/css/museum-theme.css', 'style', time() );
   wp_enqueue_style( 'Roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
   wp_enqueue_style( 'Open-Sans', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
-  wp_deregister_script( 'jquery-core' );
   wp_register_script( 'jquery-core', '//code.jquery.com/jquery-3.5.1.min.js');
   wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'swiper', get_template_directory_uri().'/assets/js/swiper-bundle.min.js', null, time(), true);
@@ -661,15 +660,27 @@ function adminAjax_data(){
   );
 }
 
+add_action( 'phpmailer_init', 'my_phpmailer_config' );
+function my_phpmailer_config( $phpmailer ) {
+
+	$phpmailer->isSMTP();
+	$phpmailer->Host = 'smtp.mail.ru';
+	$phpmailer->SMTPAuth = true;
+	$phpmailer->Port = 465;
+	require_once 'mail_config.php';
+	$phpmailer->FromName = 'Wordpress Museum-dev';
+}
+
 add_action('wp_ajax_contacts_form', 'ajax_form');
 add_action('wp_ajax_nopriv_contacts_form', 'ajax_form');
 function ajax_form() {
+  $mail_to = get_option('admin_email');
   $contact_name = $_POST['contact_name'];
   $contact_email = $_POST['contact_email'];
   $contact_comment = $_POST['contact_comment'];
-  $message = 'Пользователь отправил сообщение с сайта Museum-dev'.PHP_EOL.'Имя: '.$contact_name.PHP_EOL.'E-mail: '.$contact_email.PHP_EOL.'Сообщение: '.$contact_comment;
-  $headers = 'From: Владимир <camahor9152@gmail.com>' . "\r\n";
-  $send_message = wp_mail('camahor9152@gmail.com', 'Новая сообщение с сайта', $message, $headers);
+  $message = 'Пользователь отправил сообщение с сайта Museum-dev:'.PHP_EOL.'Имя '.$contact_name.PHP_EOL.'E-mail '.$contact_email.PHP_EOL.'Сообщение '.$contact_comment;
+  $headers = 'From: Владимир <'.$mail_to.'>' . "\r\n";
+  $send_message = wp_mail($mail_to, 'Новая заявка с сайта', $message, $headers);
   if($send_message) echo 'Всё получилось';
   else echo 'Где-то есть ошибка';
   wp_die();
